@@ -1,54 +1,52 @@
-# React + TypeScript + Vite
+# 🥗 Calories Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Calories Tracker is a web application developed with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**. It allows users to log their meals and physical activities, tracking calorie intake and expenditure. This project provided an opportunity to deepen skills in component management, custom hooks, and utility-first styling.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📋 **Interactive Form**: Easily add meals or exercises with associated calorie values.
+- 🧮 **Activity List**: View a list of logged activities, categorized and color-coded for clarity.
+- ♻️ **State Management**: Utilizes `useReducer` for efficient and scalable state handling.
+- 🎨 **Responsive Design**: Styled with Tailwind CSS for a clean and responsive user interface.
 
-## Expanding the ESLint configuration
+## 🚀 Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ [React](https://reactjs.org/): Library for building user interfaces.
+- 🧑‍💻 [TypeScript](https://www.typescriptlang.org/): Superset of JavaScript that adds static typing.
+- ⚡ [Vite](https://vitejs.dev/): Fast development environment for modern web projects.
+- 🎨 [Tailwind CSS](https://tailwindcss.com/): Utility-first CSS framework for rapid UI development.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 📦 Installation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Follow these steps to run the project locally:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Clone the repository:**
+   git clone https://github.com/Angel8118/CaloriesTracker.git
+   cd CaloriesTracker
+   
+2. **Install dependencies:
+npm install
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+3. **Start the development server:
+npm run dev
+
+4. **Open your browser:
+Navigate to http://localhost:5173 to view the application.
+
+## 🧠 Learnings
+During the development of this project, the following skills were acquired and reinforced:
+
+Creation and utilization of custom hooks for managing state.
+
+Implementation of reusable components in React.
+
+Application of Tailwind CSS for efficient component styling.
+
+Configuration and use of Vite for a modern development environment.
+
+## 🤝 Contributions
+Contributions are welcome! If you'd like to enhance this application, feel free to open an issue or submit a pull request.
+
+## 📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
+## 🥗 DEMO: https://comfy-chimera-eb1a2f.netlify.app/
