@@ -1,21 +1,9 @@
-import { type Activity } from '../types';
-import { categories } from '../data/categories';
-import { useMemo, type Dispatch} from 'react';
 import { PencilSquareIcon, XCircleIcon } from '@heroicons/react/24/outline';
-import type { ActivityActions } from '../reducers/activity-reducer';
+import { useActivity } from '../hooks/useActivity';
 
-type ActivityListProps = {
-    activities: Activity[],
-    dispatch: Dispatch<ActivityActions>
+export default function ActivityList() {
 
-}
-
-export default function ActivityList({ activities, dispatch }: ActivityListProps) {
-
-    const categoryNames = useMemo(() => (category: Activity['category']) => categories.map(cat => cat.id === category ? cat.name : '')
-        , [activities])
-    const isEmptyActivities = useMemo(() => activities.length === 0, [activities]);
-
+    const { state, dispatch, isEmptyActivities, categoryNames} = useActivity()
 
     return (
         <>
@@ -26,7 +14,7 @@ export default function ActivityList({ activities, dispatch }: ActivityListProps
                     No hay actividades registradas...
                 </p>
             ) :
-            activities.map(activity => (
+            state.activities.map(activity => (
                 <div key={activity.id} className="bg-white py-5 px-10 flex justify-between rounded-lg mt-5 shadow">
                     <div className='space-y-2 relative' >
                         <p
