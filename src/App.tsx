@@ -1,12 +1,13 @@
-import { useReducer, useEffect, useMemo } from "react"
+import { useEffect, useMemo } from "react"
 import Form from "./components/Form"
 import ActivityList from "./components/ActivityList"
-import { ActivityReducer, initialState } from "./reducers/activity-reducer"
 import CalorieTracker from "./components/CalorieTracker";
+import { useActivity } from "./hooks/useActivity";
 
 export default function App() {
 
-  const [state, dispatch] = useReducer(ActivityReducer, initialState);
+  const { state, dispatch } = useActivity();
+
   useEffect(() => {
     // Load initial data from localStorage or any other source if needed
     localStorage.setItem('activities', JSON.stringify(state.activities));
@@ -34,27 +35,18 @@ export default function App() {
 
       <section className="bg-lime-500 py-20 px-5">
         <div className="max-w-4xl mx-auto">
-          <Form
-          dispatch={dispatch}
-          state={state}
-          />
+          <Form/>
         </div>
       </section>
 
       <section className="bg-gray-800 py-10">
         <div className="max-w-4xl mx-auto">
-          <CalorieTracker
-          activities={state.activities}
-          />
-
+          <CalorieTracker/>
         </div>
       </section>
 
       <section className="max-w-4xl mx-auto py-10 px-5">
-        <ActivityList
-        activities={state.activities}
-        dispatch={dispatch}
-        />
+        <ActivityList/>
       </section>
     </>
   )
